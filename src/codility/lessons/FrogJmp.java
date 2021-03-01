@@ -1,4 +1,4 @@
-package lessons;
+package codility.lessons;
 
 public class FrogJmp {
 
