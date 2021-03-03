@@ -7,6 +7,7 @@ public class MaxCounters {
     public static int[] solution(int N, int[] A) {
 
         int[] counters = new int[N];
+
         int maxValue = 0;
         int maxCounter = 0;
 
@@ -14,14 +15,15 @@ public class MaxCounters {
 
             int operation = A[i];
 
-            if ((operation >= 1) && (operation <= N)) {
+            if ((operation >= 1) && (operation  <= N)) {
 
                 int position = A[i] - 1;
+                int value = counters[position];
 
-                if (counters[position] < maxCounter) {
-                    counters[position] = maxCounter + 1;
+                if (value >= maxCounter) {
+                    counters[position] = value + 1;
                 } else {
-                    counters[position]++;
+                    counters[position] = maxCounter + 1;
                 }
 
                 if (counters[position] > maxValue) {
@@ -32,9 +34,9 @@ public class MaxCounters {
             }
         }
 
-        for (int j = 0; j < N; j++) {
-            if (counters[j] < maxCounter) {
-                counters[j] = maxCounter;
+        for (int i = 0; i < counters.length; i++) {
+            if (counters[i] < maxCounter) {
+                counters[i] = maxCounter;
             }
         }
 
