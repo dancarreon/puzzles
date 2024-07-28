@@ -58,9 +58,35 @@ public class BinaryGap {
         return gap;
     }
 
+    // gives 100%
+    public static int smallestSolution(int N) {
+
+        String binary = Integer.toBinaryString(N);
+
+        String[] splitBinary = binary.split("1");
+
+        int longestGap = 0;
+        int index = 0;
+
+        for (String s : splitBinary) {
+
+            int gapLength = s.length();
+            int onePosition = index + gapLength + 1;
+
+            if (onePosition < binary.length() && binary.charAt(onePosition) == '1') {
+                if (gapLength > longestGap) {
+                    longestGap = gapLength;
+                }
+                index = onePosition;
+            }
+        }
+
+        return longestGap;
+    }
+
     public static void main(String[] args) {
         System.out.println(solution(1041));
         System.out.println(solution2(1041));
-        //solution2(1041);
+        System.out.println(smallestSolution(1041));
     }
 }

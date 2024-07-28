@@ -17,13 +17,14 @@ public class FrogRiverOne {
         return -1;
     }
 
+    // gives 100% score
     public static int solution2(int X, int[] A) {
 
-        Set<Integer> set = new HashSet<>();
+        Set<Integer> leaves = new HashSet<>();
 
         for (int i = 0; i < A.length; i++) {
-            set.add(A[i]);
-            if (set.size() == X) {
+            leaves.add(A[i]);
+            if (leaves.size() == X) {
                 return i;
             }
         }
@@ -32,7 +33,7 @@ public class FrogRiverOne {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[]
+        int array[] = new int[]
                 {1, 3, 1, 3, 2, 1, 3};
         //{2, 2, 2, 2, 2};
         //{1, 3, 1, 4, 2, 3, 5, 4};
