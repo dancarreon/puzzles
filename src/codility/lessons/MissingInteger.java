@@ -29,8 +29,8 @@ public class MissingInteger {
 
         Set<Integer> uniques = new HashSet<>();
 
-        for (int i = 0; i < A.length; i++) {
-            uniques.add(A[i]);
+        for (int j : A) {
+            uniques.add(j);
         }
 
         for (int i = 1; i < Integer.MAX_VALUE; i++) {
